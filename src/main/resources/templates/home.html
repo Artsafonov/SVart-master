@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:text="${title}"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<header th:insert="Blocks/header :: header"/>
+<h2 style="text-align: center;
+color: darkorange;
+font-family: monospace;
+font-size: 30px;
+ background-color: darkblue;
+ text-shadow: 2px 2px 5px red">HOME PAGE</h2>
+<div th:insert="Blocks/footer :: footer"/>
+</body>
+</html>

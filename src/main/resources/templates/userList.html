@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title style="background-color: darkcyan">User List</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<header th:insert = "Blocks/header :: header"/>
+<div class="container mt-5">
+  <h1>User List</h1>
+  <table>
+  <div th:each="el : ${users}" class="alert alert-info mt-2">
+  <tr>
+
+   <th><h3 th:text="${el.username}"/></th>
+    <th><p th:text="${el.id}"/> </th>
+    <th><p th:text="${el.roles}"/> </th>
+    <th> <a th:href="'/user/'+ ${el.id}" class="btn btn-warning">Edit</a> </th>
+  </tr>
+
+  </div>
+  </table>
+</div>
+<div th:insert = "Blocks/footer :: footer"/>
+
+</body>
+</html>
