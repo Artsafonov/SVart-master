@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-<head>
-  <header th:insert="Blocks/header :: header"/>
-  <h2 style="background-color: darkcyan">Авторизация</h2>
+>
+<link rel="stylesheet" href="/static/style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+<div th:insert="Blocks/styleForm :: styleForm"/>
+
 </head>
+<div style="margin-left: 10%; margin-top: 20pt">
+  <button class="glow-on-hover" ><a style="text-decoration: none; color: #00eed5" href="/" class="nav-link">Home</a></button>
+</div>
+<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
+</div>
 <body>
-<div th:if="${param.error}">
-  Invalid username and password.
-</div>
-<br>
-<div th:if="${param.logout}">
-  You have been logged out.
-</div>
-<br>
-<form th:action="@{/login}" method="post">
-  <div><label> User Name : <input type="text" name="username"/> </label></div>
-  <br>
-  <div><label> Password: <input type="password" name="password"/> </label></div>
-  <br>
-  <div><input type="submit" value="Sign In"/></div>
-  <br>
-</form>
-<button><a href="/registration">Add new user</a></button> <br> <br>
-<button><a href="/user">list of users</a></button>
+  <form th:action="@{/login}" method="post">
+    <h2>Authorization</h2>
+   <label> User Name : </label>
+             <input type="text" name="username"/>
+       <label > Password: </label>
+        <input type="password" name="password"/>
+              <button type="submit" class="glow-on-hover" style="color: #ffdf00; margin-left: 60pt;margin-top: 10pt">Log in</button>
+
+      <button class="glow-on-hover" style="margin-left: 60pt;margin-top: 10pt" ><a style="text-decoration: none; color: #48ff00"
+                                                                href="/registration">Registration</a></button>
+
+      <button class="glow-on-hover" style="margin-left: 60pt;margin-top: 10pt" ><a style="text-decoration: none; color: #00eed5"
+                                                                href="/user">List of users</a></button>
+
+    <div style="margin-left: 20pt" th:if="${param.error}">
+      Invalid username or password.
+    </div>
+    <div style="margin-left: 40pt" th:if="${param.logout}">
+      You have been logged out.
+    </div>
+  </form>
 </body>
 </html>

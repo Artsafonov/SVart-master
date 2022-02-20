@@ -1,22 +1,35 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title style="background-color: #77ea0c">Edit users</title>
+  <title>Edit users</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<header th:insert="Blocks/header :: header"/>
-<div class="container mt-5 mb-5">
-  <h1>Edit users</h1>
-   <div th:each="el : ${user}">
+<div th:insert="Blocks/navbar :: navbar"/>
+<div class="container3">
+  <h1>USER EDIT</h1>
+  <div th:each="el : ${user}">
     <form method="post">
-      <p>enter new name for  </p>
-      <h3 th:text="${el.username}"/>
-      <input type="text" th:value="${name}" name="username"> <br><br>
-      <button type="submit" class="btn btn-success">Обновить</button>
-       <br><br><br>
+      <input type="text" th:value="${el.username}" name="username" placeholder="new username"> <br><br>
+      <input type="text" th:value="${el.password}" name="password" placeholder="new password"> <br><br>
+      <list>
+
+
+      <div><label>User role <input type="text" th:value="${el.roles}">
+        <input type="checkbox" th:value="${el.roles}">
+      </label>
+      </div>
+      </list>
+      <br><br>
+      <button type="submit">Update</button>
+    </form>
+    <br>
+    <form th:action="'/user/' + ${el.id} + '/remove'" method="post">
+      <button type="submit"> Delete</button>
     </form>
   </div>
+</div>
+<br><br><br><br>
 </div>
 <div th:insert="Blocks/footer :: footer"/>
 

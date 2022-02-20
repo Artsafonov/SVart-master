@@ -1,0 +1,342 @@
+body {
+    background-image: url("men-g6e6e42e84_1920.jpg");
+    background-size: cover;
+}
+
+body.specHm {
+    background-image: url("microphone-g8c387e885_1920.jpg");
+    background-size: cover
+}
+
+body.specBG {
+    background-image: url("microphone2.jpg");
+    background-size: cover
+}
+
+body.specContact {
+    background-image: url("pexelsForContacts.jpg");
+    background-size: cover
+}
+
+h1.neonText {
+    font-family: ‘Lobster’, cursive;
+    font-size: 50pt;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 7px #fff,
+    0 0 10px rgba(255, 31, 117, 0.91),
+    0 0 21px rgba(255, 31, 117, 0.91),
+    0 0 42px rgba(255, 31, 117, 0.91),
+    0 0 82px rgba(255, 31, 117, 0.91),
+    0 0 92px rgba(255, 31, 117, 0.91),
+    0 0 102px rgba(255, 31, 117, 0.91);
+}
+
+.container1 {
+    font-family: ‘Lobster’, cursive;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.containerForblog {
+    font-family: ‘Lobster’, cursive;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    align-items: center;
+    align-content: center;
+}
+
+.container3 {
+    font-family: ‘Lobster’, cursive;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    width: 500px;
+}
+
+.container4 {
+    font-family: ‘Lobster’, cursive;
+    text-align: center;
+    position: fixed;
+    bottom: 25px;
+    width: 100%;
+}
+
+.block2 {
+    font-family: ‘Lobster’, cursive;
+    align-content: center;
+    text-align: center;
+    padding: 2%;
+    width: auto;
+    color: white;
+    font-size: 14pt;
+}
+
+.block1 {
+    align-content: center;
+    padding: 3%;
+    width: 1000px;
+}
+
+header {
+    background: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-weight: bolder
+}
+
+ul.linkfoot li {
+    font-size: 14px;
+    text-decoration: none;
+    color: #1c1c9b;
+    display: inline;
+    margin-right: auto;
+    padding: 3px;
+}
+
+.art1 {
+    text-decoration: none;
+    color: #01b2e7;
+    font-weight: bolder
+}
+
+.glow-on-hover1 {
+    width: 250px;
+    height: 40px;
+    border: 1px solid #2f984f;
+    outline: none;
+    color: #fff;
+    background: #090808;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover {
+    width: 180px;
+    height: 40px;
+    border: 1px solid #2f984f;
+    outline: none;
+    color: #fff;
+    background: #090808;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #1f1f1f;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.animate-charcter {
+    font-family: ‘Lobster’, cursive;
+    font-weight: bolder;
+    background-image: linear-gradient(
+            -225deg,
+            #92fc2f 0%,
+            #fd860c 29%,
+            #13ffb8 67%,
+            #fff800 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 10s linear infinite;
+    display: inline-block;
+    font-size: 30px;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+
+.section {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slide {
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slide input {
+    display: none;
+}
+
+.st.first {
+    width: 20%;
+    transition: 2s;
+}
+
+.st.img {
+    width: auto;
+    height: 500px;
+}
+
+.nav-m {
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    justify-content: center;
+    display: flex;
+}
+
+.m-btn {
+    border: 2px solid #23a2f6;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.m-btn:not(:last-child) {
+    margin-right: 30px;
+}
+
+.m-btn:hover {
+    background-color: #23a2f6;
+}
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+    margin-left: -60%;
+}
+
+#radio5:checked ~ .first {
+    margin-left: -80%;
+}
+
+.nav-auto {
+    position: absolute;
+    width: 800px;
+    margin-top: 460px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-auto div {
+    border: 2px solid #23a2f6;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.nav-auto div:not(:last-child) {
+    margin-right: 30px;
+    justify-content: center;
+}
+
+#radio1:checked ~ .nav-auto .a-b1 {
+    background-color: #23a2f6;
+}
+
+#radio1:checked ~ .nav-auto .a-b2 {
+    background-color: #23a2f6;
+}
+
+#radio1:checked ~ .nav-auto .a-b3 {
+    background-color: #23a2f6;
+}
+
+#radio1:checked ~ .nav-auto .a-b4 {
+    background-color: #23a2f6;
+}
+
+#radio1:checked ~ .nav-auto .a-b5 {
+    background-color: #23a2f6;
+}

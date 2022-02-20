@@ -9,17 +9,22 @@ public class ControllerSVart {
 
     @GetMapping("/")
     public String home (Model model) {
-        model.addAttribute("title", "Главная страница");
+        model.addAttribute("title", "Home page");
         return "home";
     }
 
 
     @GetMapping("/about")
     public String about(Model model) {
-        model.addAttribute("title", "Страница про нас");
+        model.addAttribute("title", "About");
         return "about";
     }
 
+    @GetMapping("/contacts")
+    public String contacts(Model model) {
+        model.addAttribute("title", "contacts");
+        return "contacts";
+    }
 
 }
 

@@ -1,21 +1,34 @@
 package com.svart.SVart.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.svart.SVart.entity.User;
+
+import javax.persistence.*;
 
 @Entity
 public class Post {
-
-    public Post() {
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title, anons, full_text;
     private int views;
+    private String filename;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User author;
+
+    public Post() {
+
+    }
+
+    public Post(String title, String anons, String full_text, User user) {
+        this.author = user;
+        this.title = title;
+        this.anons = anons;
+        this.full_text = full_text;
+    }
+    public String getAuthorName(){
+        return  author != null ? author.getUsername(): "<NONE>";
+    }
 
     public Long getId() {
         return id;
@@ -57,12 +70,12 @@ public class Post {
         this.views = views;
     }
 
-    public Post(String title, String anons, String full_text) {
-        this.id = id;
-        this.title = title;
-        this.anons = anons;
-        this.full_text = full_text;
-        this.views = views;
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
     }
 
     @Override
@@ -74,5 +87,13 @@ public class Post {
                 ", full_text='" + full_text + '\'' +
                 ", views=" + views +
                 '}';
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 }

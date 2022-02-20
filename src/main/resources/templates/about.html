@@ -1,15 +1,36 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="/static/style.css">
 <head>
   <title th:text="${title}"/>
-     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<header th:insert = "Blocks/header :: header"/>
-<div class="container mt-5">
-  <h1 th:text="${title}"/>
+<div>
+<div th:insert="Blocks/navbar :: navbar"/>
 </div>
-
-<div th:insert = "Blocks/footer :: footer"/>
+<br><br><br><br><br>
+<div>
+  <h1 th:text="${title}" style="text-align: center; font-size: 50pt; text-color: #04041e; font-family: ‘Lobster’, cursive; font-weight: bolder"/>
+<div class="container1">
+    <div class="block1">
+    <h3 style="font-size: 20px;color: #000000; font-family: ‘Lobster’, cursive;
+     text-shadow: 1px 0 1px #ffffff, 0 1px 1px #ffffff, -1px 0 1px #ffffff, 0 -1px 1px #ffffff;
+     text-align: center;  font-weight: bolder">
+      Naszą pasją jest muzyka, dlatego stworzyliśmy miejsce, w którym będziemy się nią z Wami dzielić.
+      Prowadzimy zajęcia muzyczne dla dzieci i dorosłych w każdym wieku. Oferujemy lekcje gry na instrumentach, zajęcia
+      wokalne, teoretyczne, muzyczno-rytmiczne i umuzykalniające. W naszym centrum stawiamy na rozwój osobisty,
+      odkrywanie
+      i kształcenie młodych talentów, współpracę z zespołami muzycznymi i zdobywanie doświadczenia muzycznego. Nie boimy
+      się nowych wyzwań i podnoszenia poprzeczki adekwatnie do stopnia rozwoju uczniów i ich umiejętności. Zajmujemy się
+      tworzeniem zespołów muzycznych, działalnością koncertową, przygotowaniem i prowadzeniem różnego rodzaju imprez
+      muzycznych (np. muzycznych przyjęć urodzinowych), organizujemy również warsztaty. Indywidualnie podchodzimy do
+      potrzeb każdego z zainteresowanych współpracą, dlatego skontaktuj się z nami i dowiedz się, co jeszcze możemy Ci
+      zaproponować!
+    </h3>
+  </div>
+</div>
+</div>
+<div th:insert="Blocks/footer :: footer"/>
 </body>
 </html>

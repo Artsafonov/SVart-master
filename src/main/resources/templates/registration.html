@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-<head>
-  <header th:insert="Blocks/header :: header"/>
-</head>
-<body>
-Регистрация
-<br>
-<br>
-<br>
+>
+<link rel="stylesheet" href="/static/style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 
-<div th:if="${param.error}">
-  Invalid username or password.
+<div th:insert="Blocks/styleForm :: styleForm"/>
+
+</head>
+<div style="margin-left: 10%; margin-top: 20pt">
+  <button class="glow-on-hover" ><a style="text-decoration: none; font-size: 14pt; color: #119b00" href="/" class="nav-link">Home</a></button>
 </div>
-<div th:if="${param.logout}">
-  You have been logged out.
+<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
 </div>
+<body>
 <form th:action="@{/registration}" method="post">
-  <div><label> User Name : <input type="text" name="username"/> </label></div>
-  <br>
-  <div><label> Password: <input type="password" name="password"/> </label></div>
-  <br>
-  <div><input type="submit" value="Зарегистрироваться"/></div>
-</form>
+  <h2>New user registration</h2>
+  <label> User Name : </label>
+  <input type="text" name="username"/>
+  <label > Password: </label>
+  <input type="password" name="password"/>
+  <br><br>
+  <button type="submit" class="glow-on-hover" style="color: #ffdf00; margin-left: 60pt;margin-top: 10pt">Sign Up</button>
+
+  <div style="margin-left: 20pt; margin-top: 10pt; color: #fd0000" th:if="${message}">
+    This username is already taken.
+  </div>
+ </form>
 </body>
 </html>
+

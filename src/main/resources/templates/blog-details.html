@@ -1,20 +1,25 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title style="background-color: chocolate">Блог сайта</title>
+  <title>BLOG</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<header th:insert="Blocks/header :: header"/>
-<div class="container mt-5">
+<div th:insert="Blocks/navbar :: navbar"/>
+<div>
 
-  <div th:each="el : ${post}" class="alert alert-info mt-2">
+  <div th:each="el : ${post}">
     <h1 th:text="${el.title}"></h1>
     <p th:text="${el.full_text}"></p>
     <p th:text="${el.views}"></p>
-    <a th:href="'/blog/'+ ${el.id} + '/edit'" class="btn btn-warning">Редактировать</a><br><br>
+
+    <form th:action="'/blog/'+ ${el.id} + '/edit'" method="get">
+      <button type="submit"> Edit post</button>
+      <br><br>
+    </form>
+
     <form th:action="'/blog/' + ${el.id} + '/remove'" method="post">
-      <button class="btn btn-warning" type="submit"> Удалить </button>
+      <button type="submit"> Remove post</button>
     </form>
   </div>
 </div>
